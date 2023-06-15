@@ -4,7 +4,7 @@ const yArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const GRID_CLASS = 'ashika';
 const GRID_ITEM_CLASS = 'grid-item';
 const SELECTED_CLASS = 'selected';
-const INVALID_CLASS = 'invalid';
+const VALID_CLASS = 'valid';
 
 const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -31,15 +31,45 @@ const setupGrid = () => {
     });
 }
 
+const setupValidCells = () => {
+    const getColumnIDs = (rowLabel, min, max) => {
+        const arr = [];
+        for (let i = min; i <= max; i++) {
+            arr.push(rowLabel + '' + i);
+        }
+
+        return arr;
+    }
+
+    const validCells = [];
+
+    validCells.push(...getColumnIDs('C', 1, 6));
+    validCells.push(...getColumnIDs('D', 1, 7));
+    validCells.push(...getColumnIDs('E', 1, 8));
+    validCells.push(...getColumnIDs('F', 2, 8));
+    validCells.push(...getColumnIDs('G', 2, 8));
+    validCells.push(...getColumnIDs('H', 2, 7));
+    validCells.push(...getColumnIDs('I', 2, 7));
+
+    console.log(validCells);
+
+    validCells.forEach(cell => {
+        const element = document.getElementById(cell);
+        element.classList.add(VALID_CLASS);
+    })
+}
+
 const selectCell = () => {
-    let gridItems = getGridItems();
+    let gridItems = document.getElementsByClassName('valid');
 
     let min = 0;
     let max = gridItems.length;
+
     let i = getRandomNumber(min, max - 1);
 
-    gridItems[i].classList.add(SELECTED_CLASS)
+    gridItems[i].classList.add(SELECTED_CLASS);
 }
 
 setupGrid();
+setupValidCells();
 selectCell();
