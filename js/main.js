@@ -43,13 +43,13 @@ const setupValidCells = () => {
 
     const validCells = [];
 
-    validCells.push(...getColumnIDs('C', 1, 6));
-    validCells.push(...getColumnIDs('D', 1, 7));
-    validCells.push(...getColumnIDs('E', 1, 8));
-    validCells.push(...getColumnIDs('F', 2, 8));
-    validCells.push(...getColumnIDs('G', 2, 8));
-    validCells.push(...getColumnIDs('H', 2, 7));
-    validCells.push(...getColumnIDs('I', 2, 7));
+    validCells.push(...getColumnIDs('C', 2, 6));
+    validCells.push(...getColumnIDs('D', 2, 7));
+    validCells.push(...getColumnIDs('E', 2, 8));
+    validCells.push(...getColumnIDs('F', 3, 8));
+    validCells.push(...getColumnIDs('G', 3, 7));
+    validCells.push(...getColumnIDs('H', 3, 7));
+    validCells.push(...getColumnIDs('I', 3, 6));
 
     console.log(validCells);
 
