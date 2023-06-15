@@ -185,7 +185,10 @@ body, html {
 .grid-item {
   background-color: #f2f2f2;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   border: 0.01rem solid black;
+  display: flex;
 }
 
 .valid { 
